@@ -1,0 +1,13 @@
+//Title Case a Sentence 
+
+function titleCase(str) {
+  var strLower = str.toLowerCase();
+  var strSplit = strLower.split(' ');
+  var titleStr = [];
+  for (i = 0; i < strSplit.length; i++){
+    titleStr[i] = strSplit[i][0].toUpperCase() + strSplit[i].substr(1);
+      }
+  return titleStr.join(' ');
+}
+
+titleCase("I'm a little tea pot");

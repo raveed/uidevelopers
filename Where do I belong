@@ -1,0 +1,21 @@
+//where do i belong
+
+function getIndexToIns(arr, num) {
+  // Find my place in this sorted array.
+var args = Array.prototype.slice.call(arguments,1);
+  console.log(args);
+  function compareNumbers(a, b) {
+  return a - b;
+  }
+  
+  var sortedArr = arr.sort(compareNumbers);
+  for (i = 0; i < arr.length; i++){
+  	if (args[0] <= sortedArr[i]){
+  		return i;
+  	}
+   }
+  return arr.length;
+  //return sortedArr;
+}
+
+getIndexToIns([2, 5, 10], 15);

@@ -1,0 +1,27 @@
+function sumPrimes(num) {
+  var primeArr = [];
+  // loop through all the numbers upto a given range to check whether it is a prime number
+  for (i = 1; i <= num; i++){
+  	if (isPrime(i)){
+  		primeArr.push(i); // if the number is prime push that number to this array.
+  	}
+  }
+  // function to check whether the number is prime. By dividing number with all the numbers less than it.
+  function isPrime(number){ 
+  	//if the number is 1 it should not return as a prime.
+    if (number === 1) 
+  	return false;
+  	for(j= 2; j < number; j++){
+  	if (number % j === 0)
+  	return false;
+  	}
+  	return true;
+  }
+  
+  //adding the prime numbers
+  return primeArr.reduce(function(prev, curr){
+  	return prev + curr;
+  });
+}
+
+sumPrimes(977);
